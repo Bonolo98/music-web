@@ -1,0 +1,32 @@
+.input {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #03591e;
+}
+
+.slide-in-blurred-right {
+  -webkit-animation: slide-in-blurred-right 1.2s cubic-bezier(0.23, 1, 0.32, 1)
+    both;
+  animation: slide-in-blurred-right 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.slide-in-blurred-left {
+  -webkit-animation: slide-in-blurred-left 1.2s cubic-bezier(0.23, 1, 0.32, 1)
+    both;
+  animation: slide-in-blurred-left 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+
+.text-focus-in{-webkit-animation:text-focus-in 1.2s cubic-bezier(.55,.085,.68,.53) both;animation:text-focus-in 1.2s cubic-bezier(.55,.085,.68,.53) both}
+
+

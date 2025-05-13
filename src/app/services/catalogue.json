@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "Title": "The Trailer EP",
+        "artist": "Bonolo Solomon",
+        "genre": "Trap-Soul",
+        "producer": "",
+        "recordLable": "",
+        "releaseDate": 2018
+    },
+    {
+        "id": 2,
+        "Title": "Bipolar LP",
+        "artist": "Bonolo Solomon",
+        "genre": "Hip-Hop/R&B",
+        "producer": "",
+        "recordLable": "",
+        "releaseDate": 2019
+    },
+    {
+        "id": 3,
+        "Title": "Shortcomings EP",
+        "artist": "Bonolo Solomon",
+        "genre": "R&B",
+        "producer": "Bonolo Solomon",
+        "recordLable": "",
+        "releaseDate": 2022
+    },
+    {
+        "id": 4,
+        "Title": "Love And Other Things EP",
+        "artist": "Bonolo Solomon",
+        "genre": "R&B",
+        "producer": "Bonolo Solomon",
+        "recordLable": "",
+        "releaseDate": 2020
+    },
+    {
+        "id": 5,
+        "Title": "King Solly EP",
+        "artist": "Bonolo Solomon",
+        "genre": "Trap-Soul",
+        "producer": "Bonolo Solomon",
+        "recordLable": "",
+        "releaseDate": 2022
+    }
+]

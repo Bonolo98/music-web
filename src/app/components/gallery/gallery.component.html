@@ -1,0 +1,23 @@
+<div class="container">
+  <!-- BACKGROUND -->
+  <div class="bg-black w-screen h-screen">
+    <!-- PAGE CONTENT -->
+    <div class="page w-full h-full">
+      <h1 class="text-white flex justify-center text-3xl mt-20">GALLERY</h1>
+      <!-- IMAGES -->
+       <div class="flex justify-center space-x-10">
+        <div class="mt-10" *ngFor="let image of images">
+            <!-- CARD -->
+            <div class="w-[28rem] h-[36rem]">
+              <a href="" target="_blank">
+                <img [src]="image.url" alt=""  class="w-full h-full object-cover rounded-lg" />
+              </a>
+              <p>{{ image.description }}</p>
+            </div>
+          </div>
+
+       </div>
+      
+    </div>
+  </div>
+</div>
