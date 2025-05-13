@@ -16,7 +16,7 @@ export class ShopComponent {
       id: 1,
       name: 'BEANIE 1',
       description: 'Short description',
-      price: 2,
+      price: 100,
       image:
         'https://burnt.co.za/cdn/shop/files/Burnt-Studios-Activewear-Sienna-Collection-Moscow-Beanie-Black-Full.jpg?v=1683810218',
     },
@@ -24,7 +24,7 @@ export class ShopComponent {
       id: 2,
       name: 'BEANIE 2',
       description: 'Short description',
-      price: 2,
+      price: 100,
       image:
         'https://burnt.co.za/cdn/shop/files/Burnt-Studios-Activewear-Sienna-Collection-Moscow-Beanie-Black-Full.jpg?v=1683810218',
     },
@@ -32,7 +32,7 @@ export class ShopComponent {
       id: 3,
       name: 'BEANIE 3',
       description: 'Short description',
-      price: 2,
+      price: 100,
       image:
         'https://burnt.co.za/cdn/shop/files/Burnt-Studios-Activewear-Sienna-Collection-Moscow-Beanie-Black-Full.jpg?v=1683810218',
     },
