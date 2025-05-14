@@ -9,15 +9,16 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
+  constructor(
+    private viewPortScroller: ViewportScroller,
+    private router: Router
+  ) {}
 
-  constructor(private viewPortScroller: ViewportScroller, private router: Router){}
-
-  scrollToSection(sectionId: string){
+  scrollToSection(sectionId: string) {
     this.viewPortScroller.scrollToAnchor(sectionId);
   }
 
-  goToDiscography(){
+  goToDiscography() {
     this.router.navigate(['/discography']);
   }
-
 }

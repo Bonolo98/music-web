@@ -1,13 +1,55 @@
-<div class="p-6 py-52">
-  <h2 class="text-2xl font-bold mb-4">Checkout</h2>
+<div class="p-6 py-52 bg-black h-screen content-center">
+  <h2 class="text-2xl font-bold mb-4 text-center text-white">Checkout</h2>
 
-  <form (ngSubmit)="payWithPaystack()" class="mb-4">
-    <input type="text" [(ngModel)]="customer.name" name="name" placeholder="First Name" class="block w-full p-2 mb-2 border rounded" required>
-    <input type="text" [(ngModel)]="customer.surname" name="surname" placeholder="Surname" class="block w-full p-2 mb-2 border rounded" required>
-    <input type="email" [(ngModel)]="customer.email" name="email" placeholder="Email" class="block w-full p-2 mb-2 border rounded" required>
-    <input type="text" [(ngModel)]="customer.address" name="address" placeholder="Delivery Address" class="block w-full p-2 mb-2 border rounded" required>
-    
-    <p>Total Amount: ZAR {{ totalAmount }}</p>
-    <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Pay Now</button>
+  <form
+    (ngSubmit)="payWithPaystack()"
+    class="mb-4 flex justify-center items-center"
+  >
+    <div class="text-white">
+      <input
+        type="text"
+        [(ngModel)]="customer.name"
+        name="name"
+        placeholder="First Name"
+        class="block w-90 p-2 mb-2 border rounded"
+        required
+      />
+      <input
+        type="text"
+        [(ngModel)]="customer.surname"
+        name="surname"
+        placeholder="Surname"
+        class="block w-90 p-2 mb-2 border rounded"
+        required
+      />
+      <input
+        type="email"
+        [(ngModel)]="customer.email"
+        name="email"
+        placeholder="Email"
+        class="block w-90 p-2 mb-2 border rounded"
+        required
+      />
+      <input
+        type="text"
+        [(ngModel)]="customer.address"
+        name="address"
+        placeholder="Delivery Address"
+        class="block w-90 p-2 mb-2 border rounded"
+        required
+      />
+      <p class="text-center text-2xl font-bebas mb-6 mt-4">
+        TOTAL AMOUNT:<br />
+        <span class="font-bold text-6xl">R {{ totalAmount }}</span>
+      </p>
+      <div class="flex justify-center">
+        <button
+          type="submit"
+          class="bg-yellow-600 text-white px-4 py-2 rounded w-60"
+        >
+          Pay Now
+        </button>
+      </div>
+    </div>
   </form>
 </div>
