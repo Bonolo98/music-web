@@ -15,15 +15,15 @@
         class="md:col-start-3 md:col-span-8 space-y-10 text-center md:text-center"
       >
         <h1
-          class="text-white text-4xl sm:text-5xl md:text-6xl font-bebas font-bold text-focus-in"
+          class="text-white text-4xl sm:text-5xl md:text-8xl bebas-neue-regular text-focus-in"
         >
-          <span class="animate-pulse bebas-neue-regular"
+          <span class="animate-pulse"
             >AWARD-WINNING SOUTH AFRICAN R&B ARTIST</span
           >
         </h1>
         <div class="flex justify-center">
           <button
-            class="text-white bg-yellow-600 hover:bg-yellow-800 transition rounded-lg w-48 h-14 sm:w-64 sm:h-16"
+            class="text-white bg-yellow-600 hover:bg-yellow-900 transition rounded-lg w-48 h-14 sm:w-64 sm:h-16"
           >
             <p class="font-bold text-sm sm:text-2xl bebas-neue-regular">
               ARTIST BIO
@@ -102,8 +102,9 @@
         </div>
 
         <!-- YOUTUBE VIDEO -->
-        <div class="w-auto h-90 my-10 bg-gray-200">
-          <video autoplay class="w-auto h-auto">
+
+        <div class="w-auto h-90 my-10 bg-gray-200" #videoContainer>
+          <video #videoPlayer autoplay class="w-auto h-auto" controls>
             <source src="/Channeltrailer.mp4" type="video/mp4" />
             <source src="movie.ogg" type="video/ogg" />
             Your browser does not support the video tag.
@@ -151,9 +152,9 @@
           (ngSubmit)="sendMessage()"
           class="gap-y-6"
         >
-          <div class="flex flex-col sm:flex-row sm:gap-x-10 gap-y-6 sm:gap-y-0">
+          <div class="flex flex-col sm:flex-row sm:gap-x-10 gap-y-8 sm:gap-y-0">
             <div class="flex-1 gap-y-2">
-              <p class="text-white">Your email</p>
+              <p class="text-white py-2">Your email</p>
               <input
                 type="email"
                 formControlName="email"
@@ -161,7 +162,7 @@
               />
             </div>
             <div class="flex-1 gap-y-2">
-              <p class="text-white">Your phone number</p>
+              <p class="text-white py-2">Your phone number</p>
               <input
                 type="text"
                 formControlName="phone"
@@ -171,7 +172,7 @@
           </div>
 
           <div class="gap-y-4">
-            <p class="text-white">Your message</p>
+            <p class="text-white py-2">Your message</p>
             <textarea
               formControlName="message"
               class="input w-full h-32 max-w-full"
@@ -181,11 +182,11 @@
           <button
             type="submit"
             [disabled]="contactForm.invalid"
-            class="px-6 py-2 bg-yellow-600 text-white rounded-lg"
+            class="px-6 py-2 mt-4 bg-yellow-600 text-white rounded-lg"
           >
             Send Message
           </button>
-          <p class="text-white">All rights reserved by bonolo solomon</p>
+          <p class="text-white py-4">All rights reserved by bonolo solomon</p>
         </form>
 
         <p *ngIf="successMessage" class="text-green-500 mt-4">
@@ -198,14 +199,30 @@
 
       <!-- Contact Details -->
       <div class="text-white space-y-6 flex flex-col justify-center">
-        <p class="font-thin text-7xl bebas-neue-regular">Reach out!</p>
+        <p class="font-thin text-7xl bebas-neue-regular">REACH OUT!</p>
         <div>
-          <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl">
-            064 862 1677
-          </h1>
-          <h1 class="font-bold text-2xl sm:text-3xl md:text-5xl break-all">
-            BOOKINGS.BJSGMAIL.COM
-          </h1>
+          <div class="flex gap-x-4">
+            <img
+              width="40"
+              height="40"
+              src="https://img.icons8.com/pastel-glyph/100/FFFFFF/whatsapp--v2.png"
+              alt="whatsapp--v2"
+            />
+            <h1 class="text-3xl sm:text-4xl md:text-5xl">064 862 1677</h1>
+          </div>
+
+          <div class="flex gap-x-4">
+            <img
+              width="40"
+              height="40"
+              src="https://img.icons8.com/ios-filled/50/FFFFFF/email-open.png"
+              alt="email-open"
+            />
+            <h1 class="text-2xl sm:text-3xl md:text-4xl break-all">
+              BOOKINGS.BJSGMAIL.COM
+            </h1>
+          </div>
+
           <p class="text-lg font-thin">For bookings and other inquiries.</p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
   private cartKey = 'cart';
@@ -34,5 +34,11 @@ export class CartService {
 
   clearCart() {
     localStorage.removeItem(this.cartKey);
+  }
+
+  updateCartItem(index: number, item: any) {
+    const cart = this.getCart();
+    cart[index] = item;
+    localStorage.setItem('cart', JSON.stringify(cart));
   }
 }

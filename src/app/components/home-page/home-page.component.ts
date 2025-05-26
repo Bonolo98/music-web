@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -18,6 +18,9 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   standalone: true,
 })
 export class HomePageComponent {
+  @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
+  @ViewChild('videoContainer') videoContainer!: ElementRef<HTMLElement>;
+
   contactForm: FormGroup;
   successMessage: string = '';
   errorMessage: string = '';
@@ -57,6 +60,36 @@ export class HomePageComponent {
     } catch (error) {
       console.error('Error sending message:', error);
       this.errorMessage = 'Failed to send message. Please try again.';
+    }
+  }
+
+  ngAfterViewInit() {
+    this.checkVideoVisibility();
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.checkVideoVisibility();
+  }
+
+  checkVideoVisibility() {
+    const video = this.videoPlayer.nativeElement;
+    const container = this.videoContainer.nativeElement;
+    const rect = container.getBoundingClientRect();
+
+    // Calculate visibility - adjust these values as needed
+    const isVisible =
+      rect.top >= -rect.height * 0.5 &&
+      rect.bottom <= window.innerHeight + rect.height * 0.5;
+
+    if (isVisible) {
+      if (video.paused) {
+        video.play().catch((e) => console.log('Autoplay prevented:', e));
+      }
+    } else {
+      if (!video.paused) {
+        video.pause();
+      }
     }
   }
 }

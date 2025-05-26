@@ -5,6 +5,9 @@ module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
+      fontFamily: {
+        "bebas-neue": ['"Bebas Neue"', "sans-serif"],
+      },
       keyframes: {
         typing: {
           "0%": {

@@ -32,23 +32,24 @@
       <div class="bg-white p-6 rounded shadow-lg w-[90%] max-w-md">
         <h2 class="text-xl font-bold mb-4 text-center">Modal Title</h2>
         <p class="mb-4 text-black text-center">added to cart!</p>
-        <div class="text-right flex justify-center">
-          <button
-            (click)="closeModal()"
-            class="bg-red-500 text-white px-4 py-2 rounded"
-          >
-            Close
-          </button>
-                  <div class="text-right flex justify-center">
-          <button
-            class="bg-red-500 text-white px-4 py-2 rounded"
-          >
-            Close
-          </button>
+        <div class="text-right flex justify-center gap-x-4">
+          <div class="text-right flex justify-center">
+            <button
+              class="bg-red-500 text-white px-4 py-2 rounded"
+              routerLink="/cart"
+            >
+              Go to Cart
+            </button>
+            <button
+              (click)="closeModal()"
+              class="bg-red-500 text-white px-4 py-2 rounded"
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
-
     <div class="grid md:grid-cols-3 gap-6">
       <div
         *ngFor="let product of products"
