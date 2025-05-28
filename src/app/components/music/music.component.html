@@ -1,19 +1,40 @@
 <div
   class="w-screen h-screen bg-black content-center p-10 flex justify-center items-center"
 >
-  <div class="w-[80vw] h-[80vh] flex items-center text-white justify-center">
-    <div>
-      <h1 class="text-lg text-center py-8">
-        HEY THERE, I'M STILL WORKING ON GETTING THE MUSIC SET UP, IN THE MEAN
-        TIME, CHECK OUT THE MUSIC HERE:
-      </h1>
-      <a
-        class="text-center flex justify-center"
-        href="https://linktr.ee/bonolosolomon"
-        target="_blank"
-      >
-        <button class="border-2 p-4 w-32 rounded-lg">MUSIC</button>
-      </a>
+
+
+<div></div>
+
+
+<div class="latest-song-container" *ngIf="!loading; else loadingState">
+  <div *ngIf="latestSong && !error; else errorState" class="song-card">
+    <div class="song-image">
+      <img [src]="latestSong.imageUrl" alt="Album cover">
+    </div>
+    <div class="song-details">
+      <h3>Latest Release</h3>
+      <h2>{{ latestSong.name }}</h2>
+      <p class="artist">{{ latestSong.album }}</p>
+      <p class="release-date">Released: {{ latestSong.releaseDate | date }}</p>
+      <button (click)="openInSpotify()" class="spotify-button">
+        <i class="fab fa-spotify"></i> Play on Spotify
+      </button>
     </div>
   </div>
+</div>
+
+<ng-template #loadingState>
+  <div class="loading-state">
+    <div class="spinner"></div>
+    <p>Loading latest song...</p>
+  </div>
+</ng-template>
+
+<ng-template #errorState>
+  <div class="error-state">
+    <i class="fas fa-exclamation-circle"></i>
+    <p>{{ error || 'Failed to load latest song' }}</p>
+    <button (click)="fetchLatestSong()" class="retry-button">Try Again</button>
+  </div>
+</ng-template>
 </div>
