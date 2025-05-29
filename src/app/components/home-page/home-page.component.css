@@ -26,7 +26,19 @@ button:hover {
   animation: slide-in-blurred-left 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
+.text-focus-in {
+  -webkit-animation: text-focus-in 1.2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 1.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
 
-.text-focus-in{-webkit-animation:text-focus-in 1.2s cubic-bezier(.55,.085,.68,.53) both;animation:text-focus-in 1.2s cubic-bezier(.55,.085,.68,.53) both}
+.responsive-text {
+  display: none; /* Hidden by default */
+}
 
-
+@media (min-width: 768px) {
+  /* Typical breakpoint for medium screens */
+  .responsive-text {
+    display: block; /* Show on medium+ screens */
+  }
+}

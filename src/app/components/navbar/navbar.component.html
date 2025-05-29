@@ -10,6 +10,7 @@
   <button
     class="btn btn-ghost text-xs md:text-base font-normal"
     (click)="scrollToSection('bio-section')"
+    routerLink="/"
   >
     BIO
   </button>
@@ -86,7 +87,7 @@
 </div>
 
 <div
-  class="visible md:invisible fixed w-screen text-white flex h-32 bg-gradient-to-b from-black from-80% text-neutral-content items-center justify-center gap-x-4 md:space-x-8 z-[9999]"
+  class="visible md:invisible fixed w-screen text-white flex h-32 bg-gradient-to-b from-black from-80% text-neutral-content items-center justify-center gap-x-2 md:gap-x-8 z-[9999]"
 >
   <a
     class="btn btn-ghost text-xs md:text-base font-normal"
@@ -116,10 +117,10 @@
     >MUSIC</a
   >
   <button
-    class="btn btn-ghost text-xs md:text-base font-normal"
+    class="btn btn-ghost text-xs md:text-base font-bold"
     (click)="scrollToSection('contacts-section')"
     routerLink="/"
   >
-    CONTACT
+    REACH OUT
   </button>
 </div>

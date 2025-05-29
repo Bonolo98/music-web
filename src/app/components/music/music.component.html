@@ -1,12 +1,78 @@
-<div
-  class="w-screen h-screen bg-black content-center p-10 flex justify-center items-center"
->
+<div class="w-screen h-screen bg-black content-center p-10">
+  <!-- <div class="w-full h-72 bg-gray-400">
+    <img class="w-full h-full object-cover" src="BioBg.jpg" alt="" />
+  </div> -->
+  <div class="text-white text-center my-10">
+    <h1 class="text-5xl font-bold">STREAM NOW</h1>
+    <p>Choose your favourite streaming platform</p>
+  </div>
 
+  <div class="md:flex grid justify-center">
+    <div class="flex">
+      <a
+        href="https://open.spotify.com/artist/4kaNxQusxlke6nfnusb2fT"
+        target="_blank"
+      >
+        <div class="w-40 h-40">
+          <div class="flex justify-center">
+            <img
+              width="90"
+              height="90"
+              src="https://img.icons8.com/ios-filled/50/FFFFFF/spotify.png"
+              alt="spotify"
+            />
+          </div>
 
-<div></div>
+          <div class="my-4">
+            <p class="text-white text-center">SPOTIFY</p>
+          </div>
+        </div>
+      </a>
+    </div>
 
+    <div class="flex">
+      <a
+        href="https://music.apple.com/gh/artist/bonolo-solomon/1360177026"
+        target="_blank"
+      >
+        <div class="w-40 h-40">
+          <div class="flex justify-center">
+            <img
+              width="90"
+              height="90"
+              src="https://img.icons8.com/ios-filled/50/FFFFFF/apple-music.png"
+              alt="apple-music"
+            />
+          </div>
 
-<div class="latest-song-container" *ngIf="!loading; else loadingState">
+          <div class="my-4">
+            <p class="text-white text-center">APPLE MUSIC</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="flex">
+      <a href="https://music.youtube.com/@bonolosolomon" target="_blank">
+        <div class="w-40 h-40">
+          <div class="flex justify-center">
+            <img
+              width="90"
+              height="90"
+              src="https://img.icons8.com/ios-filled/50/FFFFFF/youtube-music.png"
+              alt="youtube-music"
+            />
+          </div>
+
+          <div class="my-4">
+            <p class="text-white text-center">YOUTUBE MUSIC</p>
+          </div>
+        </div></a
+      >
+    </div>
+  </div>
+
+  <!-- <div class="latest-song-container" *ngIf="!loading; else loadingState">
   <div *ngIf="latestSong && !error; else errorState" class="song-card">
     <div class="song-image">
       <img [src]="latestSong.imageUrl" alt="Album cover">
@@ -36,5 +102,5 @@
     <p>{{ error || 'Failed to load latest song' }}</p>
     <button (click)="fetchLatestSong()" class="retry-button">Try Again</button>
   </div>
-</ng-template>
+</ng-template> -->
 </div>

@@ -24,6 +24,7 @@ export class HomePageComponent {
   contactForm: FormGroup;
   successMessage: string = '';
   errorMessage: string = '';
+  isVisible = false;
 
   videoId = 'https://www.youtube.com/embed/ozyr650ZV30';
   SafeUrlVideo!: SafeResourceUrl;
@@ -91,5 +92,9 @@ export class HomePageComponent {
         video.pause();
       }
     }
+  }
+
+  visibility() {
+    this.isVisible = false;
   }
 }
