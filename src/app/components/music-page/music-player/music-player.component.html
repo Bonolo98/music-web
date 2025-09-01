@@ -1,0 +1,83 @@
+<div
+  class="p-4 w-full max-w-screen mx-auto text-center text-white bg-black rounded-lg shadow-lg"
+>
+  <!-- 🎵 Cover & Info -->
+  <img
+    [src]="currentSong.cover"
+    alt="Cover"
+    class="mx-auto mb-4 rounded-lg w-48 sm:w-56 md:w-64 h-auto object-cover"
+  />
+
+  <h2 class="text-xl font-bold">{{ currentSong.title }}</h2>
+  <p class="text-sm text-gray-400">
+    {{ currentSong.artist }} • {{ currentSong.album }}
+  </p>
+
+  <!-- 🎚️ Controls -->
+  <div class="mt-4 flex justify-center items-center space-x-6">
+    <button (click)="previousSong()" class="hover:scale-110 transition">
+      ⏮️
+    </button>
+    <button (click)="togglePlay()" class="hover:scale-110 transition">
+      {{ isPlaying ? "⏸️" : "▶️" }}
+    </button>
+    <button (click)="nextSong()" class="hover:scale-110 transition">⏭️</button>
+
+    <!-- 🔁 Shuffle & Repeat -->
+    <div class="mt-4 flex justify-center space-x-4 text-sm text-gray-300">
+      <button (click)="toggleShuffle()" [class.text-green-400]="isShuffle">
+        🔀 Shuffle
+      </button>
+      <button
+        (click)="toggleRepeatMode()"
+        [class.text-green-400]="repeatMode !== 'none'"
+      >
+        🔁
+        {{
+          repeatMode === "repeat-one"
+            ? "1"
+            : repeatMode === "repeat-all"
+            ? "All"
+            : "Off"
+        }}
+      </button>
+    </div>
+
+    <!-- 🎚️ Progress Bar -->
+    <div class="mt-2 flex items-center space-x-2 text-xs text-gray-400">
+      <span>{{ audio.currentTime | number : "1.0-0" }}s</span>
+      <input
+        type="range"
+        class="w-full accent-green-400"
+        [value]="progress"
+        (input)="seek($event)"
+      />
+      <span>{{ duration | number : "1.0-0" }}s</span>
+    </div>
+  </div>
+
+  <!-- 📜 Toggle Lyrics -->
+  <div class="mt-4">
+    <button (click)="toggleLyrics()" class="text-sm underline">
+      {{ showLyrics ? "Hide Lyrics" : "Show Lyrics" }}
+    </button>
+  </div>
+
+  <!-- 📄 Lyrics Display (Inline) -->
+  <div
+    *ngIf="showLyrics"
+    class="mt-2 bg-gray-800 p-3 rounded-lg text-left text-sm whitespace-pre-line"
+  >
+    {{ currentSong.lyrics }}
+  </div>
+
+  <!-- 🎧 Music List Component -->
+  <div class="mt-10">
+    <app-music-list (selectTrack)="selectFromList($event)"></app-music-list>
+  </div>
+
+  <!-- 📜 Lyrics Component -->
+  <div class="mt-10" *ngIf="showLyrics">
+    <app-lyrics-section [lyrics]="currentSong.lyrics"></app-lyrics-section>
+  </div>
+</div>
